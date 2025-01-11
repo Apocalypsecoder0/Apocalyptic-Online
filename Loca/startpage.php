@@ -47,7 +47,7 @@
         loca_add("DOWN_IMPRINT" , "Imprint");
         loca_add("DOWN_TAC" , "T&C's");
 
-        loca_add("HOME_TITLE",  "Welcome to Conquest Awakening Rts Turn Base MMORPG");
+        loca_add("HOME_TITLE",  "Welcome to Apocalyptic Online Rts Turn Base MMORPG");
         loca_add("HOME_TEXT1",  "<strong>The Game</strong> is a <strong>strategic space simulation game</strong>with \n" .
               "<strong>thousands of players</strong> across the world competing with each other <strong>simultaneously</strong>. All you need to play is a standard web browser.");
         loca_add("HOME_TEXT2",  "Register now and enter the fantastic CONQUEST AWAKENING OF THE UNIVERSE!");

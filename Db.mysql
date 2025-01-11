@@ -3,7 +3,13 @@
 -- Create database for the game
 CREATE DATABASE IF NOT EXISTS game_database;
 USE game_database;
-
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    role ENUM('admin', 'player') DEFAULT 'player',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
 INSERT INTO users (username, password) 
 VALUES ('testuser', '$2y$10$hashedpassword...');
 CREATE TABLE users (

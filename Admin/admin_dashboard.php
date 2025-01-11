@@ -124,6 +124,29 @@ $fleets = getAllFleets($conn);
         <?php endforeach; ?>
     </table>
 </div>
+    <div class="section">
+    <h3>Manage Stargates</h3>
+    <table>
+        <tr>
+            <th>Planet Name</th>
+            <th>Owner</th>
+            <th>Destination</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+        <?php foreach ($stargates as $stargate): ?>
+        <tr>
+            <td><?= htmlspecialchars($stargate['planet_name']); ?></td>
+            <td><?= htmlspecialchars($stargate['owner_id']); ?></td>
+            <td><?= htmlspecialchars($stargate['destination']); ?></td>
+            <td><?= $stargate['status'] == 1 ? 'Operational' : 'Offline'; ?></td>
+            <td>
+                <a href="manage_stargate.php?id=<?= $stargate['id']; ?>">Manage Stargate</a>
+            </td>
+        </tr>
+        <?php endforeach; ?>
+    </table>
+</div>
 <div class="section">
     <h3>Manage Fleets</h3>
     <table>

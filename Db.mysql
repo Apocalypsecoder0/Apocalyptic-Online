@@ -85,3 +85,35 @@ CREATE TABLE IF NOT EXISTS event_logs (
     event_timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (player_id) REFERENCES players(player_id)
 );
+-- Planets Table
+CREATE TABLE planets (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255),
+    owner VARCHAR(255),
+    system_id INT,
+    has_jump_gate BOOLEAN DEFAULT FALSE
+);
+
+-- Moons Table
+CREATE TABLE moons (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255),
+    planet_id INT,
+    has_stargate BOOLEAN DEFAULT FALSE
+);
+
+-- Jump Gates Table
+CREATE TABLE jump_gates (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    source_planet_id INT,
+    target_planet_id INT,
+    is_active BOOLEAN DEFAULT TRUE
+);
+
+-- Stargates Table
+CREATE TABLE stargates (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    source_planet_id INT,
+    target_planet_id INT,
+    is_active BOOLEAN DEFAULT TRUE
+);

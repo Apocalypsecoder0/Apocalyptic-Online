@@ -103,7 +103,31 @@ $fleets = getAllFleets($conn);
             <?php endforeach; ?>
         </table>
     </div>
-
+<div class="section">
+    <h3>Manage Fleets</h3>
+    <table>
+        <tr>
+            <th>Fleet Name</th>
+            <th>Owner</th>
+            <th>Size</th>
+            <th>Target Planet</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+        <?php foreach ($fleets as $fleet): ?>
+        <tr>
+            <td><?= htmlspecialchars($fleet['fleet_name']); ?></td>
+            <td><?= htmlspecialchars($fleet['owner_id']); ?></td>
+            <td><?= htmlspecialchars($fleet['fleet_size']); ?></td>
+            <td><?= htmlspecialchars($fleet['target_planet']); ?></td>
+            <td><?= $fleet['is_moving'] ? 'Moving' : 'Stationary'; ?></td>
+            <td>
+                <a href="manage_fleet.php?id=<?= $fleet['id']; ?>">Manage Fleet</a>
+            </td>
+        </tr>
+        <?php endforeach; ?>
+    </table>
+</div>
     <div class="section">
         <h3>Fleets</h3>
         <table>

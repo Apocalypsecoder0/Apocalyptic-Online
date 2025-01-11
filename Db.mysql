@@ -4,6 +4,17 @@
 CREATE DATABASE IF NOT EXISTS game_database;
 USE game_database;
 
+INSERT INTO users (username, password) 
+VALUES ('testuser', '$2y$10$hashedpassword...');
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL
+CREATE TABLE adminusers (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    addminusername VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL
+);
 -- Players table
 CREATE TABLE IF NOT EXISTS players (
     player_id INT AUTO_INCREMENT PRIMARY KEY,

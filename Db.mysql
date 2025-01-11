@@ -1,0 +1,70 @@
+-- db.mysql
+
+-- Create database for the game
+CREATE DATABASE IF NOT EXISTS game_database;
+USE game_database;
+
+-- Players table
+CREATE TABLE IF NOT EXISTS players (
+    player_id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL,
+    password_hash VARCHAR(255) NOT NULL,
+    email VARCHAR(100),
+    registration_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    last_login TIMESTAMP,
+    level INT DEFAULT 1,
+    experience INT DEFAULT 0,
+    currency INT DEFAULT 0
+);
+
+-- Planets table
+CREATE TABLE IF NOT EXISTS planets (
+    planet_id INT AUTO_INCREMENT PRIMARY KEY,
+    player_id INT,
+    name VARCHAR(100),
+    resources INT DEFAULT 0,
+    location VARCHAR(50),
+    FOREIGN KEY (player_id) REFERENCES players(player_id)
+);
+
+-- Fleets table
+CREATE TABLE IF NOT EXISTS fleets (
+    fleet_id INT AUTO_INCREMENT PRIMARY KEY,
+    player_id INT,
+    fleet_name VARCHAR(100),
+    fleet_type VARCHAR(50),
+    ship_count INT DEFAULT 0,
+    planet_id INT,
+    FOREIGN KEY (player_id) REFERENCES players(player_id),
+    FOREIGN KEY (planet_id) REFERENCES planets(planet_id)
+);
+
+-- Tech Tree table
+CREATE TABLE IF NOT EXISTS tech_tree (
+    tech_id INT AUTO_INCREMENT PRIMARY KEY,
+    player_id INT,
+    tech_name VARCHAR(100),
+    tech_level INT DEFAULT 0,
+    unlocked BOOLEAN DEFAULT FALSE,
+    FOREIGN KEY (player_id) REFERENCES players(player_id)
+);
+
+-- Transactions table for tracking purchases and microtransactions
+CREATE TABLE IF NOT EXISTS transactions (
+    transaction_id INT AUTO_INCREMENT PRIMARY KEY,
+    player_id INT,
+    transaction_type VARCHAR(50),
+    amount INT,
+    date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (player_id) REFERENCES players(player_id)
+);
+
+-- Event logs for tracking live operations and player events
+CREATE TABLE IF NOT EXISTS event_logs (
+    event_id INT AUTO_INCREMENT PRIMARY KEY,
+    player_id INT,
+    event_type VARCHAR(100),
+    event_description TEXT,
+    event_timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (player_id) REFERENCES players(player_id)
+);

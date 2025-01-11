@@ -1,0 +1,139 @@
+/* Basic reset and layout */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1b1b1b;
+    color: #f4f4f4;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header */
+header {
+    background-color: #333;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    color: #fff;
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+nav {
+    background-color: #444;
+    padding: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+nav ul li a:hover {
+    color: #f4b400;
+}
+
+/* Main Content */
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.sidebar {
+    width: 25%;
+    background-color: #2b2b2b;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.sidebar h2 {
+    font-size: 1.5em;
+    color: #fff;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+    color: #ddd;
+    text-decoration: none;
+}
+
+.sidebar ul li a:hover {
+    color: #f4b400;
+}
+
+/* Main Game Area */
+.game-area {
+    width: 70%;
+    padding: 20px;
+    background-color: #3c3c3c;
+    border-radius: 8px;
+}
+
+.game-area h2 {
+    font-size: 2em;
+    color: #f4b400;
+}
+
+.game-area p {
+    font-size: 1.2em;
+    color: #ddd;
+}
+
+/* Buttons */
+button {
+    background-color: #f4b400;
+    border: none;
+    padding: 10px 20px;
+    color: #fff;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #ff8f00;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+    margin-top: 20px;
+}

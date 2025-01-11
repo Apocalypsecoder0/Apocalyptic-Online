@@ -29,14 +29,14 @@ Installation
 
 Clone the repository:
 
-git clone https://github.com/Apocalypsecoder0/game-mmorpg.git
+git clone https://github.com/Apocalypsecoder0/game-mmorpg.git](https://github.com/Apocalypsecoder0/Test-mmorpg-Apocalyptic-Online
 cd tgame-mmorpg
 Set up the database:
 
 Create a new MySQL database:
 CREATE DATABASE ogame;
 Import the provided SQL script to set up the tables:
-mysql -u yourusername -p ogame < database/ogame.sql
+mysql -u yourusername -p ogame < database/db.sql
 Update the database configuration in the config.php file:
 <?php
 define('DB_HOST', 'localhost');
@@ -49,7 +49,7 @@ Start the web server:
 Ensure your web server is configured to serve the project directory.
 Access the game:
 
-Open your web browser and navigate to http://localhost/game-mmorpg/.
+Open your web browser and navigate to http://localhost/Test-mmorpg-Apocalyptic-Online/.
 Project Structure
 
 Classes

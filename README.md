@@ -1,11 +1,20 @@
-# Test-mmorpg
-
+# Test-mmorpgApocalyptic Online Server
 These PHP files form the skeleton for different sections of your game system. Each of them is modular and can be updated with actual game data and logic. Feel free to adapt or expand based on specific features, mechanics, and data in your game.
 Apocalyptic Online Server
+# scifi conquest MMORPG
+GalaxyCore Engine:
+test game MMORPG is a text-based turn-based real time strategy game where players can explore the universe, manage resources, build fleets, and engage in interstellar combat. This project is a simplified implementation inspired by the classic Ogame MMORPG.
 
-scifi Conquest RTS Turn base Web MMORPG
-
-GalaxyCore Engine: test game MMORPG is a text-based turn-based real time strategy game where players can explore the universe, manage resources, build fleets, and engage in interstellar combat. This project is a simplified implementation inspired by the classic Ogame MMORPG.
+## Features
+Player Management: Register and log in as a player.
+Resource Management: Manage resources such as metal, crystal, and deuterium.
+Building Management: Build and manage researchers and technology tree
+Fleet Management: Build and manage fleets for combat.
+Turn-Based Combat: Engage in turn-based fleet combat with other players.
+Universe Exploration: Explore galaxies and planets.
+Control planets and moons and use the jump gate for space travel and stargate for planetary travel 
+- Unit management attack troop, Super Attack Troops, and defince troop, Super Defince Troops, Spies/Covert Agents, Anti-Intelligence Agents, Counter-Intelligence (or Anti-Spy) Level , Intelligence (or Spy) Level/ Intelligence (or Spy) Level/ Siege/Offense, Anti-Covert/ anti-covert/anti-intelligence, Unique, Mercenary , Fortifications/Defense, Covert.
+## Getting Started
 
 
 Getting Started

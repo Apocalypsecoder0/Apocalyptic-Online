@@ -104,6 +104,27 @@ $fleets = getAllFleets($conn);
         </table>
     </div>
 <div class="section">
+    <h3>Manage Jump Gates</h3>
+    <table>
+        <tr>
+            <th>Planet Name</th>
+            <th>Owner</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+        <?php foreach ($jumpGates as $jumpGate): ?>
+        <tr>
+            <td><?= htmlspecialchars($jumpGate['planet_name']); ?></td>
+            <td><?= htmlspecialchars($jumpGate['owner_id']); ?></td>
+            <td><?= $jumpGate['status'] == 1 ? 'Active' : 'Inactive'; ?></td>
+            <td>
+                <a href="manage_jump_gate.php?id=<?= $jumpGate['id']; ?>">Manage Jump Gate</a>
+            </td>
+        </tr>
+        <?php endforeach; ?>
+    </table>
+</div>
+<div class="section">
     <h3>Manage Fleets</h3>
     <table>
         <tr>

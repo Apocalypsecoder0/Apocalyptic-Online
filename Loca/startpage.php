@@ -1,7 +1,7 @@
 // "en"
     $LocaLang = "en";
     {
-        loca_add("SERVERNAME" , "OGame Open Source");
+        loca_add("SERVERNAME" , "Apocalyptic Online Game Open Source");
        
 
         loca_add("META_CHARSET" , "utf-8");

@@ -26,6 +26,6 @@ class GameOverview {
 }
 
 // Example usage
-$gameOverview = new GameOverview("Galactic Empires", "MMORTS RPG", ["PC", "PS5", "Xbox"], "Multiplayer Online", "An immersive sci-fi universe where players build empires, manage resources, and engage in intergalactic battles.");
+$gameOverview = new GameOverview("Galactic Empires", "MMORTS RPG", ["web game"], "Multiplayer Online", "An immersive sci-fi universe where players build empires, manage resources, and engage in intergalactic battles.");
 $gameOverview->displayOverview();
 ?>

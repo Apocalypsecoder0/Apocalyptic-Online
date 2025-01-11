@@ -1,0 +1,82 @@
+<?php
+
+// ShipCore_Engine.php
+
+class ShipCore_Engine {
+    private $db;
+    private $user_id;
+
+    // Constructor to initialize database connection and user ID
+    public function __construct($db, $user_id) {
+        $this->db = $db;
+        $this->user_id = $user_id;
+    }
+
+    // Get all ships owned by the user
+    public function getUserShips() {
+        $query = "SELECT * FROM ships WHERE user_id = :user_id";
+        $stmt = $this->db->prepare($query);
+        $stmt->bindParam(':user_id', $this->user_id, PDO::PARAM_INT);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    // Get details of a specific ship
+    public function getShipDetails($ship_id) {
+        $query = "SELECT * FROM ships WHERE ship_id = :ship_id";
+        $stmt = $this->db->prepare($query);
+        $stmt->bindParam(':ship_id', $ship_id, PDO::PARAM_INT);
+        $stmt->execute();
+
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
+    // Build a new ship
+    public function buildShip($type, $quantity) {
+        $query = "INSERT INTO ships (user_id, type, quantity) VALUES (:user_id, :type, :quantity)";
+        $stmt = $this->db->prepare($query);
+        $stmt->bindParam(':user_id', $this->user_id, PDO::PARAM_INT);
+        $stmt->bindParam(':type', $type, PDO::PARAM_STR);
+        $stmt->bindParam(':quantity', $quantity, PDO::PARAM_INT);
+        $stmt->execute();
+
+        return $this->db->lastInsertId(); // Return the ID of the new ship
+    }
+
+    // Update ship status (e.g., damage, position, etc.)
+    public function updateShipStatus($ship_id, $status) {
+        $query = "UPDATE ships SET status = :status WHERE ship_id = :ship_id";
+        $stmt = $this->db->prepare($query);
+        $stmt->bindParam(':ship_id', $ship_id, PDO::PARAM_INT);
+        $stmt->bindParam(':status', $status, PDO::PARAM_STR);
+        $stmt->execute();
+    }
+
+    // Assign ship to a fleet
+    public function assignShipToFleet($ship_id, $fleet_id) {
+        $query = "UPDATE ships SET fleet_id = :fleet_id WHERE ship_id = :ship_id";
+        $stmt = $this->db->prepare($query);
+        $stmt->bindParam(':ship_id', $ship_id, PDO::PARAM_INT);
+        $stmt->bindParam(':fleet_id', $fleet_id, PDO::PARAM_INT);
+        $stmt->execute();
+    }
+
+    // Remove ship from a fleet
+    public function removeShipFromFleet($ship_id) {
+        $query = "UPDATE ships SET fleet_id = NULL WHERE ship_id = :ship_id";
+        $stmt = $this->db->prepare($query);
+        $stmt->bindParam(':ship_id', $ship_id, PDO::PARAM_INT);
+        $stmt->execute();
+    }
+
+    // Repair a damaged ship
+    public function repairShip($ship_id) {
+        $query = "UPDATE ships SET status = 'operational' WHERE ship_id = :ship_id";
+        $stmt = $this->db->prepare($query);
+        $stmt->bindParam(':ship_id', $ship_id, PDO::PARAM_INT);
+        $stmt->execute();
+    }
+}
+
+?>

@@ -129,7 +129,27 @@ $fleets = getAllFleets($conn);
             <?php endforeach; ?>
         </table>
     </div>
-
+<div class="section">
+    <h3>Manage Resources</h3>
+    <table>
+        <tr>
+            <th>Planet Name</th>
+            <th>Owner</th>
+            <th>Resources</th>
+            <th>Actions</th>
+        </tr>
+        <?php foreach ($planets as $planet): ?>
+        <tr>
+            <td><?= htmlspecialchars($planet['name']); ?></td>
+            <td><?= htmlspecialchars($planet['owner_id']); ?></td>
+            <td><?= htmlspecialchars($planet['resources']); ?></td>
+            <td>
+                <a href="manage_resources.php?id=<?= $planet['id']; ?>">Manage Resources</a>
+            </td>
+        </tr>
+        <?php endforeach; ?>
+    </table>
+</div>
     <div class="section">
         <h3>Latest Logs</h3>
         <table>

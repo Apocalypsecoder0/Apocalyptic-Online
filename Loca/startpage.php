@@ -6,7 +6,7 @@
 
         loca_add("META_CHARSET" , "utf-8");
         loca_add("META_KEYWORDS" , "RTS,Turn Base, Browsergame, Onlinegame, Browsergames, Browsergame, Spiel, Spiele, Onlinespiel, Onlinespiele, old, old deisgn");
-        loca_add("META_DESCRIPTION" , "OGame - Top Browsergame im Weltraum. Kommandiere deine Flotten.");
+        loca_add("META_DESCRIPTION" , "OGame - Top Browsergame ");
 
         loca_add("ERROR_0" , "OK");
         loca_add("ERROR_101" , "Player\'s name is already taken!");
